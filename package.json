@@ -1,0 +1,31 @@
+{
+  "name": "web_project_around_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test":"node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AriCamposM/web_project_around_express.git"
+  },
+  "author": "Ari Campos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AriCamposM/web_project_around_express/issues"
+  },
+  "homepage": "https://github.com/AriCamposM/web_project_around_express#readme",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.30.0",
+    "nodemon": "^3.1.5"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
