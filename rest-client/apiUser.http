@@ -1,0 +1,41 @@
+###  Debe devolver un código 404 con un message
+GET http://localhost:3000/
+
+### Debe devolver un JSON con los usuarios
+
+GET http://localhost:3000/users
+
+### Debe devolver un JSON de usuario nada más
+
+GET http://localhost:3000/users/66f4ae082913c38501cede00
+
+### Debe devolver un JSON de error por que no existe el usuario
+GET http://localhost:3000/users/no_existe
+
+### Crear un nuevo usuario
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Juaan Pérez",
+  "about": "Desarrollador de software",
+  "avatar": "https://i.pinimg.com/736x/13/4f/81/134f8118c299fc1ccba3b320ce0bec70.jpg"
+}
+
+### Para actualizar Avatar de Usuario
+PATCH http://localhost:3000/users/me/avatar
+Content-Type: application/json
+
+{
+  "avatar": "https://i.pinimg.com/564x/53/3e/2f/533e2f3909a604b92040c327004cb97d.jpg"
+}
+
+### Para actualizar información de Usuario
+
+PATCH http://localhost:3000/users/me
+Content-Type: application/json
+
+{
+  "name": "Ari Campos",
+  "about": "Desarrollador fullstack"
+}
