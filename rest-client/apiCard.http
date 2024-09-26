@@ -7,7 +7,7 @@ POST http://localhost:3000/cards
 Content-Type: application/json
 
 {
-  "name": "Gato negro",
+  "name": "Gatoo negro",
   "link": "https://i.pinimg.com/736x/13/4f/81/134f8118c299fc1ccba3b320ce0bec70.jpg"
 }
 

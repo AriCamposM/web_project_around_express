@@ -17,9 +17,9 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Juaan Pérez",
-  "about": "Desarrollador de software",
-  "avatar": "https://i.pinimg.com/736x/13/4f/81/134f8118c299fc1ccba3b320ce0bec70.jpg"
+  "name": "TEST 20204",
+  "about": "Desarrollador FullStack",
+  "avatar": "https://bariloche.org/wp-content/uploads/2015/03/mapa-buenos-aires-bariloche.jpg"
 }
 
 ### Para actualizar Avatar de Usuario

@@ -18,7 +18,7 @@ const userSchema = new moongose.Schema({
     required: true,
     validate:{
       validator: function(value){
-        return /^(https?:\/\/)(www\.)?([A-Za-z0-9-]+\.)+[A-Za-z]{2,}\/([A-Za-z0-9._~:/?%#\[\]@!$&'()*+,;=]*)?(\#.*)?$/.test(value);
+        return /^(https?:\/\/)(www\.)?([a-zA-Z0-9._~:/?%#\[\]@!$&'()*+,;=-]+\/?)(#[a-zA-Z0-9._~:/?%#\[\]@!$&'()*+,;=-]*)?$/.test(value);
       },
      message: props => `${props.value} is not a valid url !`
     }

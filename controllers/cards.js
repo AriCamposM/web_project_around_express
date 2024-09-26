@@ -29,22 +29,32 @@ module.exports.deleteCard = ( req, res ) =>{
 
 module.exports.likeCard = (req, res) => {
   card.findByIdAndUpdate( req.params.cardId, { $addToSet: { likes: req.user._id } }, { new: true },)
+  .orFail(() => {
+    const error = new Error("Card was not found");
+    error.statusCode = 404;
+    throw error;
+  })
   .then(card => {
-    if(!card){
-      return res.status(404).json({ message:'Card was not found'});
-    }
     res.status(200).json({ message:'Card Like Sucessfully'});
   })
-  .catch(err => res.status(400).json({message:'Error liking Card', error:err.message}));
+  .catch(err => {
+    const statusCode = err.statusCode || 400;
+    res.status(statusCode).json({ message: 'Error liking Card', error: err.message });
+  });
 }
 
 module.exports.dislikeCard = (req, res) => {
   card.findByIdAndUpdate( req.params.cardId,{ $pull: { likes: req.user._id } },{ new: true },)
+  .orFail(() => {
+    const error = new Error("Card was not found");
+    error.statusCode = 404;
+    throw error;
+  })
   .then(card => {
-    if(!card){
-      return res.status(404).json({ message:'Card was not found'});
-    }
     res.status(200).json({ message:'Card Dislike Sucessfully'});
   })
-  .catch(err => res.status(400).json({message:'Error disliking Card', error:err.message}));
+  .catch(err => {
+    const statusCode = err.statusCode || 400;
+    res.status(statusCode).json({ message: 'Error disliking Card', error: err.message });
+  });
 }
